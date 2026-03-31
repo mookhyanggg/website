@@ -1,0 +1,31 @@
+/* HERO */
+.hero {
+  background: url('image1.png') center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+/* CARD DESIGN */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* IMAGE FIX */
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  font-size: 14px;
+}
