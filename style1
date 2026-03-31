@@ -1,0 +1,40 @@
+
+/* HERO SECTION */
+.hero-section {
+  background: url('image1.png') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* CARD HOVER EFFECT */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* BUTTON SPACING */
+.btn {
+  margin-top: 10px;
+}
+
+/* TESTIMONIAL TEXT */
+.bg-light p {
+  font-style: italic;
+}
+
+/* FOOTER */
+footer {
+  font-size: 14px;
+}
