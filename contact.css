@@ -1,0 +1,31 @@
+/* HERO */
+.hero {
+  background: url('image1.png') center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+/* FORM STYLE */
+form input,
+form textarea {
+  border-radius: 5px;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+/* MAP */
+iframe {
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+  font-size: 14px;
+}
