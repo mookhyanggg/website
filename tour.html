@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Packages - TravelNow</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="packages.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">TravelNow</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tour.html">Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center text-white">
+  <div>
+    <h1>Tour Packages</h1>
+    <p>Choose the best package for your trip</p>
+  </div>
+</section>
+
+<!-- SORTING -->
+<section class="container my-4">
+  <div class="row">
+    <div class="col-md-4">
+      <select class="form-select" id="sortPrice">
+        <option value="default">Sort by Price</option>
+        <option value="low">Lowest to Highest</option>
+        <option value="high">Highest to Lowest</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="container mb-5">
+  <div class="row" id="packageList">
+
+    <div class="col-md-4 mb-4 package" data-price="100">
+      <div class="card">
+        <img src="image2.png" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Boracay Getaway</h5>
+          <p class="card-text">3 Days / 2 Nights</p>
+          <p class="price">$100</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4 package" data-price="300">
+      <div class="card">
+        <img src="image3.png" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Tokyo Experience</h5>
+          <p class="card-text">5 Days Tour</p>
+          <p class="price">$300</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4 package" data-price="500">
+      <div class="card">
+        <img src="image4.png" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Paris Luxury</h5>
+          <p class="card-text">7 Days Tour</p>
+          <p class="price">$500</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">View Details</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODALS -->
+<div class="modal fade" id="modal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Boracay Getaway</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Includes hotel, breakfast, and island hopping.</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Tokyo Experience</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Includes hotel, tours, and transportation.</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Paris Luxury</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Includes luxury hotel, meals, and guided tours.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2026 TravelNow</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const sortPrice = document.getElementById('sortPrice');
+  const packageList = document.getElementById('packageList');
+
+  sortPrice.addEventListener('change', () => {
+    const packages = Array.from(document.querySelectorAll('.package'));
+    let sorted;
+
+    if (sortPrice.value === 'low') {
+      sorted = packages.sort((a,b) => a.dataset.price - b.dataset.price);
+    } else if (sortPrice.value === 'high') {
+      sorted = packages.sort((a,b) => b.dataset.price - a.dataset.price);
+    } else {
+      sorted = packages;
+    }
+
+    packageList.innerHTML = '';
+    sorted.forEach(p => packageList.appendChild(p));
+  });
+</script>
+
+</body>
+</html>
